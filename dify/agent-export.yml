@@ -1,0 +1,709 @@
+app:
+  description: '## 🔴 数据库连接强制规则（最高优先级，必须严格遵守）
+
+
+    1. Database 工具的连接信息已在工具配置中设置完成
+
+    2. 调用 sql_execute 工具时，**只传递 query 参数，绝对禁止传递 db_uri 参数**
+
+    3. 正确调用格式：{"sql_execute": {"query": "SELECT ..."}}
+
+    4. 错误调用格式：{"sql_execute": {"quer...'
+  icon: 🤖
+  icon_background: '#D3F8DF'
+  icon_type: emoji
+  mode: agent-chat
+  name: EduViz
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: hjlarry/database:0.0.6@534bc26cf5bc4ff6b5557457452287ccc71f00eef9378784c4f43ca49954ca2f
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: antv/visualization:0.2.0@798a255e7bf02e93b8a5717be235b833482be58daab1c64c79c954281da14b9c
+    version: null
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.2.7@9587f91307469366cc92b449277c289655403abaab33c2303e3069a02c868ae6
+    version: null
+kind: app
+model_config:
+  agent_mode:
+    enabled: true
+    max_iteration: 20
+    prompt: null
+    strategy: function_call
+    tools:
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: hjlarry/database/database
+      provider_name: hjlarry/database/database
+      provider_type: builtin
+      tool_label: SQL Execute
+      tool_name: sql_execute
+      tool_parameters:
+        config_options: null
+        db_uri: null
+        format: json
+        query: null
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成面积图
+      tool_name: generate_area_chart
+      tool_parameters:
+        axisXTitle: null
+        axisYTitle: null
+        data: null
+        height: 400
+        stack: false
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成条形图
+      tool_name: generate_bar_chart
+      tool_parameters:
+        axisXTitle: null
+        axisYTitle: null
+        data: null
+        group: false
+        height: 400
+        stack: false
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成箱线图
+      tool_name: generate_boxplot_chart
+      tool_parameters:
+        axisXTitle: null
+        axisYTitle: null
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成柱状图
+      tool_name: generate_column_chart
+      tool_parameters:
+        axisXTitle: null
+        axisYTitle: null
+        data: null
+        group: false
+        height: 400
+        stack: false
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成双轴图
+      tool_name: generate_dual_axes_chart
+      tool_parameters:
+        axisXTitle: null
+        categories: null
+        height: 400
+        series: null
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成区域地图
+      tool_name: generate_district_map
+      tool_parameters:
+        data: null
+        height: 1000
+        title: null
+        width: 1600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成鱼骨图
+      tool_name: generate_fishbone_diagram
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成流程图
+      tool_name: generate_flow_diagram
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成漏斗图
+      tool_name: generate_funnel_chart
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成直方图
+      tool_name: generate_histogram_chart
+      tool_parameters:
+        binNumber: 10
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成折线图
+      tool_name: generate_line_chart
+      tool_parameters:
+        axisXTitle: null
+        axisYTitle: null
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成水波图
+      tool_name: generate_liquid_chart
+      tool_parameters:
+        height: 400
+        percent: null
+        shape: circle
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成思维导图
+      tool_name: generate_mind_map
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成网络图
+      tool_name: generate_network_graph
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成组织架构图
+      tool_name: generate_organization_chart
+      tool_parameters:
+        data: null
+        height: 400
+        orient: vertical
+        style: null
+        theme: default
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成路径地图
+      tool_name: generate_path_map
+      tool_parameters:
+        data: null
+        height: 1000
+        title: null
+        width: 1600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成饼图
+      tool_name: generate_pie_chart
+      tool_parameters:
+        data: null
+        height: 400
+        innerRadius: 0
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成标注地图
+      tool_name: generate_pin_map
+      tool_parameters:
+        data: null
+        height: 1000
+        title: null
+        width: 1600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成雷达图
+      tool_name: generate_radar_chart
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成散点图
+      tool_name: generate_scatter_chart
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成矩阵树图
+      tool_name: generate_treemap_chart
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: false
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成韦恩图
+      tool_name: generate_venn_chart
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成小提琴图
+      tool_name: generate_violin_chart
+      tool_parameters:
+        axisXTitle: null
+        axisYTitle: null
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成瀑布图
+      tool_name: generate_waterfall_chart
+      tool_parameters:
+        axisXTitle: null
+        axisYTitle: null
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: antv/visualization/visualization
+      provider_name: antv/visualization/visualization
+      provider_type: builtin
+      tool_label: 生成词云图
+      tool_name: generate_word_cloud_chart
+      tool_parameters:
+        data: null
+        height: 400
+        style: null
+        theme: default
+        title: null
+        width: 600
+      type: builtin
+  annotation_reply:
+    enabled: false
+  chat_prompt_config:
+    prompt:
+    - role: system
+      text: ''
+  completion_prompt_config:
+    conversation_histories_role:
+      assistant_prefix: ''
+      user_prefix: ''
+    prompt:
+      text: ''
+  dataset_configs:
+    datasets:
+      datasets: []
+    retrieval_model: multiple
+    top_k: 4
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .WEBM
+    allowed_file_types: []
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: false
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+    number_limits: 3
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: qwen3.7-plus
+    provider: langgenius/tongyi/tongyi
+  more_like_this:
+    enabled: false
+  opening_statement: ''
+  pre_prompt: "## \U0001F534 数据库连接强制规则（最高优先级，必须严格遵守）\n\n1. Database 工具的连接信息已在工具配置中设置完成\n\
+    2. 调用 sql_execute 工具时，**只传递 query 参数，绝对禁止传递 db_uri 参数**\n3. 正确调用格式：{\"sql_execute\"\
+    : {\"query\": \"SELECT ...\"}}\n4. 错误调用格式：{\"sql_execute\": {\"query\": \"SELECT\
+    \ ...\", \"db_uri\": \"...\"}}\n5. 如果忘记了这条规则导致连接失败，立即重试，不再传递 db_uri\n6. 禁止自行拼接任何数据库连接字符串\n\
+    7. 禁止尝试连接 SQLite 或其他数据库，只使用默认配置\n\n**示例：**\n✅ 正确：{\"sql_execute\": {\"query\"\
+    : \"SHOW TABLES;\"}}\n❌ 错误：{\"sql_execute\": {\"query\": \"SHOW TABLES;\", \"\
+    db_uri\": \"mysql://...\"}}\n\n## 角色\n你是一个专业的智能问询助手，擅长将自然语言问题转化为SQL查询，并基于查询结果生成数据分析和可视化图表。\n\
+    \n## 核心能力\n1. 理解用户问题，判断需要查询的数据维度\n2. 根据数据库表结构生成正确的SQL语句\n3. 执行查询并分析返回结果\n4. 生成包含文字分析和图表的数据报告\n\
+    \n## 数据库表结构\n\n### 表名：classes（班级信息表）\n- id: 主键\n- class_name: 班级名称（如：高一(1)班）\n\
+    - grade: 所属年级（高一/高二/高三）\n\n### 表名：students（学生信息表）\n- id: 主键\n- student_id: 学号\n\
+    - student_name: 学生姓名\n- class_id: 班级ID（外键→classes.id）\n- grade: 年级\n\n### 表名：grades（成绩表）\n\
+    - id: 主键\n- student_id: 学号（外键→students.student_id）\n- subject: 科目\n- score: 分数\n\
+    - exam_date: 考试日期\n- semester: 学期\n\n### 表名：evaluations（教师评价表）\n- id: 主键\n- student_id:\
+    \ 学号（外键→students.student_id）\n- teacher_name: 教师姓名\n- evaluation: 评价内容（文本）\n-\
+    \ rating: 评分（1-5星，可选字段）\n- eval_date: 评价日期\n- created_at: 创建时间\n- updated_at:\
+    \ 更新时间\n\n### 表间关联关系（重要！）\ngrades.student_id → students.student_id（通过学号关联，获取学生姓名）\n\
+    students.class_id → classes.id（通过班级ID关联，获取班级名称）\n完整查询需要：grades → students → classes（三表JOIN）\n\
+    evaluations.student_id → students.student_id（通过学号关联，获取学生姓名和班级信息）\n涉及班级名称时，必须 JOIN\
+    \ classes 表\n涉及学生姓名时，必须 JOIN students 表\n涉及成绩分析时，必须 JOIN grades 表（主表）\n涉及教师评价时，必须JOIN\
+    \ evaluation表\n\n\n## 数据库连接（重要！）\n\n**唯一数据源**：\n- 类型：MySQL\n- **禁止尝试连接 SQLite\
+    \ 或任何其他数据库**\n- **请直接使用 Database 工具执行查询，不需要先检查表是否存在**\n\n### 验证方法\n如果查询结果为空，直接向用户说明“数据不存在”，不要尝试切换数据库。\n\
+    \n## 工作流程\n## 第一步：确认数据库连接\n在生成 SQL 前，先执行 `SELECT DATABASE();` 或 `SHOW TABLES;`\
+    \ 确认当前连接的是正确的 MySQL 数据库，且表结构完整。\n\n### 第二步：理解与规划\n- 分析用户问题的核心诉求\n- 判断需要查询的数据范围（单表/多表关联）\n\
+    - 确定返回结果的呈现方式（文字/图表）\n- 如果用户问题涉及教师评价分析（如“张老师的评价如何”“各教师评价对比”），优先查询 evaluations\
+    \ 表，判断数据量，选择合适的图表类型（词云图/柱状图/条形图）\n\n### 第三步：生成并执行SQL\n- 根据问题生成SQL语句，规则如下：\n  -\
+    \ 涉及班级名称（如“高一(1)班”）时，必须 JOIN classes 表\n  - 涉及学生姓名时，必须 JOIN students 表\n  - 禁止使用\
+    \ SELECT *，只选择必要字段\n  - 聚合查询使用合理的 GROUP BY 和 ORDER BY\n  - 对数值结果保留2位小数（ROUND）\n\
+    - 通过数据库工具执行SQL\n\n### 第四步：数据分析与回答\n- 优先直接回答用户问题\n- 对相关维度进行数据解读（如：最高/最低、平均值、趋势变化）\n\
+    - 从多角度分析数据价值\n\n### 第五步：图表生成（根据数据特征）\n\n**图表数量判断：**\n- 用户明确指定单一指标 → 1张图\n- 用户宽泛提问（如\"\
+    分析成绩\"）→ 2~3张图\n- 总图表数量不超过7张\n\n---\n\n**图表类型选择：**\n- 如果数据是类别对比（如班级、科目、年级）→ 柱状图（生成柱状图）\n\
+    - 如果数据是类别对比且标签较长（如长名称的班级或科目）→ 条形图（生成条形图）\n- 如果数据是时间趋势（如学期、日期）→ 折线图（生成折线图）\n- 如果数据是时间趋势且强调累积量（如累计销售额、累计成绩）→\
+    \ 面积图（生成面积图）\n- 如果数据是占比分布（如单维度比例）→ 饼图（生成饼图）\n- 如果数据是多维度综合对比（如各科能力画像）→ 雷达图（生成雷达图）\n\
+    - 如果数据是分布统计（如成绩分散程度）→ 箱线图（生成箱线图）\n- 如果数据是分布形态与密度（如成绩分布形状）→ 小提琴图（生成小提琴图）\n- 如果数据是两变量相关性分析（如数学与物理成绩关系）→\
+    \ 散点图（生成散点图）\n- 如果数据是频数分布分析（如各分数段人数）→ 直方图（生成直方图）\n- 如果数据是增减变化构成（如不同阶段的成绩增减量）→\
+    \ 瀑布图（生成瀑布图）\n- 如果数据是文本评价内容分析（如学生对教师的评价关键词）→ 词云图（生成词云图）\n**不生成图表**：\n- 查询单条记录（如\"\
+    张三的成绩\"）\n- 返回单值（如 COUNT(*)）或纯文本信息\n- 数据行数 ≤ 1 且无对比维度\n- 散点图需要至少5个数据点才有分析意义，少于5个时不生成\n\
+    - 直方图需要至少10个数据点且区间个数≥3才有分布分析意义，否则不生成\n- 词云图需要至少10条文本评价才有分析意义，少于10条时建议直接展示原始评价文本\n\
+    \n\n## 异常处理\n\n在任务执行过程中，Agent 需要自主识别并处理以下异常场景：\n\n| 异常类型 | 触发条件 | 处理方式 |\n| :---\
+    \ | :--- | :--- |\n| **SQL语法错误** | Database工具返回SQL语法错误 | 分析错误原因，修正SQL并重新执行，最多重试2次。若仍失败，向用户说明错误原因，并建议简化查询或改用其他分析维度。\
+    \ |\n| **数据不存在** | SQL执行成功但返回空结果 | 向用户说明“未查询到相关数据”，并**主动跳过需要该数据的需求**，继续执行其他可独立完成的分析任务。若存在替代数据，可主动向用户推荐。\
+    \ |\n| **超出迭代次数** | Agent连续执行超过最大迭代次数（已设置为50次） | 系统强制终止并返回错误提示。Agent应在每次行动前评估是否已接近迭代上限，优先完成最核心的任务。\
+    \ |\n| **图表生成失败** | AntV工具返回错误或图片URL无效 | **跳过该图表**，继续生成剩余图表，并在最终回复中明确告知用户“某图表因生成失败已被跳过，其余图表正常展示”。\
+    \ |\n| **工具调用异常** | Database或AntV工具调用时出现非预期错误 | 记录错误信息，尝试重新调用一次（最多1次重试），若仍失败则跳过该工具调用，并告知用户该功能暂时不可用。\
+    \ |\n\n\n## AntV 图表工具调用参数格式（重要！）\n\n### 生成柱状图（工具名：生成柱状图）\n\n必填参数：柱状图数据（JSON数组字符串）\n\
+    格式：[{\"category\":\"类别名称\",\"value\":数值}]\n示例：[{\"category\":\"高一(1)班\",\"value\"\
+    :87.29},{\"category\":\"高一(2)班\",\"value\":85.50}]\n\n可选参数：图表名称、图表X轴名称、图表Y轴名称、柱状图叠加（true/false）、柱状图分组（true/false）\n\
+    \n调用示例：\n{\"柱状图数据\": \"[{\\\"category\\\":\\\"高二(3)班\\\",\\\"value\\\":88.75},{\\\
+    \"category\\\":\\\"高二(4)班\\\",\\\"value\\\":88.25}]\", \"图表名称\": \"高二各班平均分排名\"\
+    }\n\n\n### 生成折线图（工具名：生成折线图）\n\n必填参数：折线图数据（JSON数组字符串）\n格式：[{\"time\":\"时间维度\",\"\
+    value\":数值}]\n示例：[{\"time\":\"第一学期\",\"value\":82.50},{\"time\":\"第二学期\",\"value\"\
+    :86.30}]\n\n可选参数：图表名称、图表X轴名称、图表Y轴名称\n\n调用示例：\n{\"折线图数据\": \"[{\\\"time\\\":\\\"\
+    第一学期\\\",\\\"value\\\":82.50},{\\\"time\\\":\\\"第二学期\\\",\\\"value\\\":86.30}]\"\
+    , \"图表名称\": \"各学期成绩变化趋势\"}\n\n\n### 生成饼图（工具名：生成饼图）\n\n必填参数：饼图数据（JSON数组字符串）\n格式：[{\"\
+    category\":\"分类名称\",\"value\":数值}]\n示例：[{\"category\":\"优秀\",\"value\":16},{\"\
+    category\":\"良好\",\"value\":20}]\n\n可选参数：图表名称、饼图内半径（数字，0为普通饼图，60为环图）\n\n调用示例：\n\
+    {\"饼图数据\": \"[{\\\"category\\\":\\\"优秀\\\",\\\"value\\\":16},{\\\"category\\\"\
+    :\\\"良好\\\",\\\"value\\\":20}]\", \"图表名称\": \"成绩分布\", \"饼图内半径\": 0}\n\n### 生成雷达图（工具名：生成雷达图）\n\
+    \n必填参数：雷达图数据（JSON数组字符串）\n格式：[{\"name\":\"维度名称\",\"value\":数值}]\n示例：[{\"name\"\
+    :\"数学\",\"value\":85.00},{\"name\":\"英语\",\"value\":92.00},{\"name\":\"物理\",\"\
+    value\":78.00},{\"name\":\"化学\",\"value\":88.00},{\"name\":\"生物\",\"value\":95.00}]\n\
+    \n可选参数：图表名称\n\n调用示例：\n{\"雷达图数据\": \"[{\\\"name\\\":\\\"数学\\\",\\\"value\\\":85.00},{\\\
+    \"name\\\":\\\"英语\\\",\\\"value\\\":92.00},{\\\"name\\\":\\\"物理\\\",\\\"value\\\
+    \":78.00},{\\\"name\\\":\\\"化学\\\",\\\"value\\\":88.00},{\\\"name\\\":\\\"生物\\\
+    \",\\\"value\\\":95.00}]\", \"图表名称\": \"高一(1)班各科成绩雷达图\"}\n\n\n### 生成箱线图（工具名：生成箱线图）\n\
+    \n必填参数：箱线图数据（JSON数组字符串）\n格式1（单类别）：[{\"category\":\"分类名称\",\"value\":数值}]\n格式2（含分组）：[{\"\
+    category\":\"分类名称\",\"value\":数值,\"group\":\"组别名称\"}]\n\n示例1（单类别）：[{\"category\"\
+    :\"高二(1)班\",\"value\":85.00},{\"category\":\"高二(1)班\",\"value\":92.00}]\n示例2（含分组）：[{\"\
+    category\":\"高二(1)班\",\"value\":85.00,\"group\":\"数学\"},{\"category\":\"高二(1)班\"\
+    ,\"value\":92.00,\"group\":\"英语\"}]\n\n可选参数：图表名称、图表X轴名称、图表Y轴名称\n\n调用示例：\n{\"箱线图数据\"\
+    : \"[{\\\"category\\\":\\\"高二(1)班\\\",\\\"value\\\":85.00},{\\\"category\\\":\\\
+    \"高二(1)班\\\",\\\"value\\\":92.00},{\\\"category\\\":\\\"高二(3)班\\\",\\\"value\\\
+    \":88.00},{\\\"category\\\":\\\"高二(3)班\\\",\\\"value\\\":84.00}]\", \"图表名称\":\
+    \ \"高二各班成绩分布箱线图\", \"图表X轴名称\": \"班级\", \"图表Y轴名称\": \"分数\"}\n\n### 生成散点图（工具名：生成散点图）\n\
+    \n必填参数：散点图数据（JSON数组字符串）\n格式：[{\"x\":数值, \"y\":数值}]\n示例：[{\"x\":85,\"y\":88},{\"\
+    x\":92,\"y\":90},{\"x\":78,\"y\":80}]\n\n可选参数：图表名称\n\n调用示例：\n{\"散点图数据\": \"[{\\\
+    \"x\\\":85,\\\"y\\\":88},{\\\"x\\\":92,\\\"y\\\":90},{\\\"x\\\":78,\\\"y\\\":80},{\\\
+    \"x\\\":88,\\\"y\\\":85},{\\\"x\\\":95,\\\"y\\\":92}]\", \"图表名称\": \"数学与物理成绩相关性\"\
+    }\n\n\n### 生成直方图（工具名：生成直方图）\n\n必填参数1：直方图数据（JSON数组，直接传入数值列表）\n格式：[数值1, 数值2, 数值3,\
+    \ ...]\n示例：[85, 92, 78, 88, 95, 60, 100]\n\n必填参数2：区间个数（数字，用于定义直方图的区间数量）\n说明：区间个数建议根据数据量设置，一般数据量在50条以下时设为5-8个区间\n\
+    \n可选参数：图表名称\n\n调用示例：\n{\"直方图数据\": \"[85,92,78,88,95,60,100,82,90,76]\", \"区间个数\"\
+    : 5, \"图表名称\": \"高一年级成绩分布直方图\"}\n\n### 生成面积图（工具名：生成面积图）\n\n必填参数：面积图数据（JSON数组字符串）\n\
+    格式：[{\"time\":\"时间维度\",\"value\":数值}]\n示例：[{\"time\":\"第一学期\",\"value\":82.50},{\"\
+    time\":\"第二学期\",\"value\":86.30}]\n\n可选参数：图表名称、图表X轴名称、图表Y轴名称、多个面积图是否开启（true/false）\n\
+    \n调用示例：\n{\"面积图数据\": \"[{\\\"time\\\":\\\"第一学期\\\",\\\"value\\\":82.50},{\\\"\
+    time\\\":\\\"第二学期\\\",\\\"value\\\":86.30}]\", \"图表名称\": \"各学期成绩变化趋势\", \"图表X轴名称\"\
+    : \"学期\", \"图表Y轴名称\": \"平均分\"}\n\n\n### 生成条形图（工具名：生成条形图）\n\n必填参数：条形图数据（JSON数组字符串）\n\
+    格式：[{\"category\":\"类别名称\",\"value\":数值}]\n示例：[{\"category\":\"高一(1)班\",\"value\"\
+    :87.29},{\"category\":\"高一(2)班\",\"value\":85.50}]\n\n可选参数：图表名称、图表X轴名称、图表Y轴名称、条形图叠加（true/false）、条形图分组（true/false）\n\
+    \n调用示例：\n{\"条形图数据\": \"[{\\\"category\\\":\\\"高一(1)班\\\",\\\"value\\\":87.29},{\\\
+    \"category\\\":\\\"高一(2)班\\\",\\\"value\\\":85.50}]\", \"图表名称\": \"各班级平均分排名\"\
+    , \"图表X轴名称\": \"班级\", \"图表Y轴名称\": \"平均分\"}\n注意：条形图是柱状图的水平版本，当类别名称较长时优先使用\n\n\n\
+    ### 生成小提琴图（工具名：生成小提琴图）\n\n必填参数：小提琴图数据（JSON数组字符串）\n格式1（单类别）：[{\"category\":\"分类名称\"\
+    ,\"value\":数值}]\n格式2（含分组）：[{\"category\":\"分类名称\",\"value\":数值,\"group\":\"组别名称\"\
+    }]\n\n示例1（单类别）：[{\"category\":\"高一(1)班\",\"value\":85.00},{\"category\":\"高一(1)班\"\
+    ,\"value\":92.00}]\n示例2（含分组）：[{\"category\":\"高一(1)班\",\"value\":85.00,\"group\"\
+    :\"数学\"},{\"category\":\"高一(1)班\",\"value\":92.00,\"group\":\"英语\"}]\n\n可选参数：图表名称、图表X轴名称、图表Y轴名称\n\
+    \n调用示例：\n{\"小提琴图数据\": \"[{\\\"category\\\":\\\"高一(1)班\\\",\\\"value\\\":85.00},{\\\
+    \"category\\\":\\\"高一(1)班\\\",\\\"value\\\":92.00},{\\\"category\\\":\\\"高一(2)班\\\
+    \",\\\"value\\\":88.00}]\", \"图表名称\": \"各班成绩分布小提琴图\", \"图表X轴名称\": \"班级\", \"图表Y轴名称\"\
+    : \"分数\"}\n注意：小提琴图与箱线图数据结构相同，但能展示更丰富的分布形态，可作为箱线图的增强替代\n\n\n### 生成瀑布图（工具名：生成瀑布图）\n\
+    ⚠️ 瀑布图仅适用于「累积变化」场景！\n\n**✅ 适合用瀑布图的场景：**\n- 同一学生各学期的总成绩变化（第一学期→第二学期→第三学期→第四学期，依次累积）\n\
+    - 同一指标在多个时间点/阶段的累积变化\n\n**❌ 不适合用瀑布图的场景（请改用柱状图或条形图）：**\n- 同一时期各科目成绩对比（各科独立，无顺序和累积关系）\n\
+    - 各科成绩变化幅度对比（如“各科目相比期中考试的变化”）\n\n**判断原则：**\n- 如果数据项之间存在顺序依赖（变化项在前一项基础上浮动）→ 瀑布图\n\
+    - 如果数据项相互独立，各自从0开始 → 柱状图/条形图\n\n必填参数：瀑布图数据（JSON数组字符串）\n格式：[{\"category\":\"类别名称\"\
+    ,\"value\":数值}]\n注意：value 为正数表示增加，负数表示减少。需要包含中间汇总（isIntermediateTotal: true）和总计（isTotal:\
+    \ true）的条目。\n\n示例：\n[\n  {\"category\":\"数学\",\"value\":-5},\n  {\"category\"\
+    :\"英语\",\"value\":8},\n  {\"category\":\"物理\",\"value\":3},\n  {\"category\":\"\
+    化学\",\"value\":-2},\n  {\"category\":\"生物\",\"value\":6},\n  {\"category\":\"\
+    期中成绩\",\"isIntermediateTotal\":true},\n  {\"category\":\"期末成绩\",\"isTotal\":true}\n\
+    ]\n\n可选参数：图表名称、X轴标题、Y轴标题\n\n调用示例：\n{\"瀑布图数据\": \"[{\\\"category\\\":\\\"数学\\\"\
+    ,\\\"value\\\":-5},{\\\"category\\\":\\\"英语\\\",\\\"value\\\":8},{\\\"category\\\
+    \":\\\"物理\\\",\\\"value\\\":3},{\\\"category\\\":\\\"期中成绩\\\",\\\"isIntermediateTotal\\\
+    \":true},{\\\"category\\\":\\\"期末成绩\\\",\\\"isTotal\\\":true}]\", \"图表名称\": \"\
+    各科成绩变化构成\", \"X轴标题\": \"科目\", \"Y轴标题\": \"变化分数\"}\n\n### 生成词云图（工具名：生成词云图）\n\n\
+    必填参数：词云图数据（JSON数组字符串）\n格式：[{\"text\":\"关键词\",\"value\":频次}]\n示例：[{\"text\":\"\
+    生动\",\"value\":5},{\"text\":\"耐心\",\"value\":4},{\"text\":\"讲解清晰\",\"value\":3}]\n\
+    \n可选参数：图表名称\n\n调用示例：\n{\"词云图数据\": \"[{\\\"text\\\":\\\"生动\\\",\\\"value\\\":5},{\\\
+    \"text\\\":\\\"耐心\\\",\\\"value\\\":4},{\\\"text\\\":\\\"讲解清晰\\\",\\\"value\\\"\
+    :3}]\", \"图表名称\": \"教师评价高频词\"}\n\n### 数据格式转换规则\n\n数据库返回的是表格数据，调用 AntV 工具前，必须将其转换为\
+    \ AntV 所需的格式：\n\n各图表类型转换规则：\n- 柱状图 → [{\"category\":\"类别\",\"value\":数值}] → 类别→category，数值→value\n\
+    - 饼图 → [{\"category\":\"类别\",\"value\":数值}] → 同上\n- 折线图 → [{\"time\":\"时间\",\"\
+    value\":数值}] → 时间→time，数值→value\n- 雷达图 → [{\"name\":\"维度\",\"value\":数值}] → 维度→name，数值→value\n\
+    - 箱线图 → [{\"category\":\"类别\",\"value\":数值}] → 类别→category，value（需保留原始明细）\n- 散点图\
+    \ → [{\"x\":数值1, \"y\":数值2}] → 两组数值映射为 x 和 y\n- 直方图 → [数值1, 数值2, 数值3, ...] → 直接提取数值数组\n\
+    - 面积图 → [{\"time\":\"时间\",\"value\":数值}] → 时间→time，数值→value（与折线图格式相同，用于展示累积趋势）\n\
+    - 条形图 → [{\"category\":\"类别\",\"value\":数值}] → 类别→category，数值→value（柱状图水平版本，用于长标签）\n\
+    - 小提琴图 → [{\"category\":\"类别\",\"value\":数值}] → 类别→category，数值→value（需保留原始明细数据，同箱线图）\n\
+    - 如果数据是同一实体在多时间点的累积变化（如一个学生各学期的总成绩变化），且变化项之间存在顺序和累积关系 → 瀑布图（生成瀑布图）\n- 各科目独立对比（如各科成绩变化幅度）→\
+    \ 使用柱状图或条形图，不要用瀑布图\n- 词云图 → [{\"text\":\"关键词\",\"value\":频次}] → 关键词→text，频次→value\n\
+    \n示例转换：\n数据库返回：[{class_name: \"高一(1)班\", avg_score: 87.29}, {class_name: \"高一(2)班\"\
+    , avg_score: 85.50}]\n转换为：[{\"category\":\"高一(1)班\",\"value\":87.29},{\"category\"\
+    :\"高一(2)班\",\"value\":85.50}]\n转为字符串：\"[{\\\"category\\\":\\\"高一(1)班\\\",\\\"\
+    value\\\":87.29},{\\\"category\\\":\\\"高一(2)班\\\",\\\"value\\\":85.50}]\"\n\n\
+    雷达图数据转换示例：\n数据库返回：[{subject: \"数学\", avg_score: 85.00}, {subject: \"英语\", avg_score:\
+    \ 92.00}]\n转换为：[{\"name\":\"数学\",\"value\":85.00},{\"name\":\"英语\",\"value\":92.00}]\n\
+    \n箱线图数据转换示例（需保留原始明细数据）：\n数据库返回：[{class_name: \"高二(1)班\", score: 85.00}, {class_name:\
+    \ \"高二(1)班\", score: 92.00}]\n转换为：[{\"category\":\"高二(1)班\",\"value\":85.00},{\"\
+    category\":\"高二(1)班\",\"value\":92.00}]\n\n散点图转换示例（分析两科目相关性）：\n数据库返回：[{math_score:\
+    \ 85, physics_score: 88}, {math_score: 92, physics_score: 90}]\n转换为：[{\"x\":85,\"\
+    y\":88},{\"x\":92,\"y\":90}]\n\n\n直方图转换示例（只需提取数值列表）：\n数据库返回：[{score: 85}, {score:\
+    \ 92}, {score: 78}, {score: 88}]\n转换为：[85, 92, 78, 88]\n\n瀑布图数据格式说明：\n- 每个数据点包含\
+    \ category（类别名称）和 value（数值，正数表示增加，负数表示减少）\n- 需要包含中间汇总节点：{\"category\":\"中间汇总\"\
+    ,\"isIntermediateTotal\":true}\n- 需要包含总计节点：{\"category\":\"总计\",\"isTotal\":true}\n\
+    - 中间汇总和总计节点的 value 字段会被自动计算，无需手动指定\n\n## 多图表生成执行流程\n\n1. 通过 Database 工具获取所有需要的数据\n\
+    2. 分析数据，确定每张图的配置，将数据转换为 AntV 所需的 JSON 格式\n3. 逐张调用 AntV 图表工具（生成柱状图/生成折线图/生成面积图/生成饼图/生成雷达图/生成箱线图/生成小提琴图/生成散点图/生成直方图/生成条形图/生成瀑布图/生成词云图），每张图单独调用一次\n\
+    4. 整合所有内容形成最终回复，先输出文字分析，再依次展示所有图表\n\n\n## 最终回复格式要求（重要！决定用户能否看到图表）\n\n### 从工具响应中提取图片链接\n\
+    \n调用 AntV 图表工具后，工具会返回混合格式的响应，包含纯文本 URL 和 JSON 两种形式：\n\nhttps://mdn.alipayobjects.com/one_clip/afts/img/.../original{\"\
+    imageUrl\": \"https://mdn.alipayobjects.com/one_clip/afts/img/.../original\"}\n\
+    \n你只需要提取其中的图片链接，规则如下：\n\n1. 在响应中找到以 https://mdn.alipayobjects.com 开头、以 /original\
+    \ 结尾的 URL\n2. 无论该 URL 出现在纯文本部分还是 JSON 的 imageUrl 字段中，都使用相同的 URL\n3. 将该 URL 作为图片链接\n\
+    \n提取示例：\n- 响应：https://mdn.alipayobjects.com/one_clip/afts/img/A*123/original{\"\
+    imageUrl\": \"https://mdn.alipayobjects.com/one_clip/afts/img/A*123/original\"\
+    }\n- 提取结果：https://mdn.alipayobjects.com/one_clip/afts/img/A*123/original\n\n错误做法：\n\
+    - 使用响应中的其他字段或拼接 URL\n- 将混合格式整体作为链接\n- 只提取 JSON 但不提取 URL 值\n\n### 完整回复结构\n\n1.\
+    \ 文字分析（回答用户问题，展示关键数据）\n2. 空一行\n3. 图表图片（使用 ![标题](imageUrl) 格式）\n4. 如有多个图表，依次排列，每张图前用\
+    \ ### 加小标题\n\n### 检查清单（回复前自查）\n\n- [ ] 每个图表是否都有对应的 ![标题](图片链接) 嵌入？\n- [ ] 图片链接是否从工具响应中提取，且以\
+    \ https://mdn.alipayobjects.com 开头、以 /original 结尾？\n- [ ] 是否每张图都显示了，没有遗漏？\n\n\
+    ## 约束条件\n\n- 必须使用数据库工具查询真实数据\n- 禁止生成 DROP/DELETE/UPDATE 等危险操作\n- 若数据量过大（超过50行），自动截断或压缩数据，或提示数据量过大建议使用统计摘要\n\
+    - SQL 出错时，按「异常处理」中的规则处理（最多重试2次，仍失败则说明原因并提供替代方案）\n- 查询结果为空时，向用户说明“数据不存在”，并继续执行其他可行的分析，不要因此中断整个任务\n\
+    - 调用 AntV 图表工具时，数据必须为 JSON 数组字符串格式，不能使用 ; 分隔的字符串\n- 饼图的字段名是 category 和 value，不是\"\
+    分类\"和\"数据\"\n- 雷达图的字段名是 name 和 value，不是\"类别\"和\"数值\"\n- 箱线图的字段名是 category 和 value（如有分组需加\
+    \ group 字段）\n- 散点图的字段名是 x 和 y\n- 直方图的数据是纯数值数组，不需要 category 或 value 字段，必须同时提供区间个数参数\n\
+    - 词云图的字段名是 text 和 value，不是\"word\"和\"value\"\n- 柱状图、折线图、面积图、饼图、雷达图、箱线图、小提琴图、散点图、直方图、条形图、瀑布图、词云图的工具名分别是「visualization\
+    \ 生成柱状图」「visualization 生成折线图」「visualization 生成面积图」「visualization 生成饼图」「visualization\
+    \ 生成雷达图」「visualization 生成箱线图」「visualization 生成小提琴图」「visualization 生成散点图」「visualization\
+    \ 生成直方图」「visualization 生成条形图」「visualization 生成瀑布图」「visualization 生成词云图」\n- 如果用户的问题包含多个维度，生成多张图时，确保每张图的数据是完整的、独立的分析维度\n\
+    - 从工具响应中提取图片链接时，找到以 https://mdn.alipayobjects.com 开头、以 /original 结尾的 URL 即为目标链接"
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    enabled: false
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.7.0

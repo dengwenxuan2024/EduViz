@@ -1,0 +1,265 @@
+{
+    "examples": [
+      {
+        "category": "bar_chart",
+        "description": "柱状图调用示例（班级平均分排名）",
+        "user_query": "查询高二各班平均分排名",
+        "tool_call": {
+          "tool_name": "生成柱状图",
+          "parameters": {
+            "柱状图数据": "[{\"category\":\"高二(3)班\",\"value\":88.75},{\"category\":\"高二(4)班\",\"value\":88.25}]",
+            "图表名称": "高二各班平均分排名"
+          }
+        },
+        "expected_output": "柱状图展示各班平均分对比"
+      },
+      {
+        "category": "line_chart",
+        "description": "折线图调用示例（学期趋势变化）",
+        "user_query": "查询各学期成绩变化趋势",
+        "tool_call": {
+          "tool_name": "生成折线图",
+          "parameters": {
+            "折线图数据": "[{\"time\":\"第一学期\",\"value\":82.50},{\"time\":\"第二学期\",\"value\":86.30}]",
+            "图表名称": "各学期成绩变化趋势"
+          }
+        },
+        "expected_output": "折线图展示学期趋势变化"
+      },
+      {
+        "category": "pie_chart",
+        "description": "饼图调用示例（成绩分布）",
+        "user_query": "查询成绩分段占比",
+        "tool_call": {
+          "tool_name": "生成饼图",
+          "parameters": {
+            "饼图数据": "[{\"category\":\"优秀\",\"value\":16},{\"category\":\"良好\",\"value\":20}]",
+            "图表名称": "成绩分布",
+            "饼图内半径": 0
+          }
+        },
+        "expected_output": "饼图展示各分段占比"
+      },
+      {
+        "category": "radar_chart",
+        "description": "雷达图调用示例（各科能力画像）",
+        "user_query": "查询高一(1)班各科成绩能力画像",
+        "tool_call": {
+          "tool_name": "生成雷达图",
+          "parameters": {
+            "雷达图数据": "[{\"name\":\"数学\",\"value\":85.00},{\"name\":\"英语\",\"value\":92.00},{\"name\":\"物理\",\"value\":78.00},{\"name\":\"化学\",\"value\":88.00},{\"name\":\"生物\",\"value\":95.00}]",
+            "图表名称": "高一(1)班各科成绩雷达图"
+          }
+        },
+        "expected_output": "雷达图展示多维度能力画像"
+      },
+      {
+        "category": "boxplot",
+        "description": "箱线图调用示例（成绩分布）",
+        "user_query": "查询高二各班成绩分布",
+        "tool_call": {
+          "tool_name": "生成箱线图",
+          "parameters": {
+            "箱线图数据": "[{\"category\":\"高二(1)班\",\"value\":85.00},{\"category\":\"高二(1)班\",\"value\":92.00},{\"category\":\"高二(3)班\",\"value\":88.00},{\"category\":\"高二(3)班\",\"value\":84.00}]",
+            "图表名称": "高二各班成绩分布箱线图",
+            "图表X轴名称": "班级",
+            "图表Y轴名称": "分数"
+          }
+        },
+        "expected_output": "箱线图展示各班级成绩分布"
+      },
+      {
+        "category": "scatter_chart",
+        "description": "散点图调用示例（两变量相关性）",
+        "user_query": "查询数学与物理成绩相关性",
+        "tool_call": {
+          "tool_name": "生成散点图",
+          "parameters": {
+            "散点图数据": "[{\"x\":85,\"y\":88},{\"x\":92,\"y\":90},{\"x\":78,\"y\":80},{\"x\":88,\"y\":85},{\"x\":95,\"y\":92}]",
+            "图表名称": "数学与物理成绩相关性"
+          }
+        },
+        "expected_output": "散点图展示两变量相关性"
+      },
+      {
+        "category": "histogram",
+        "description": "直方图调用示例（频数分布）",
+        "user_query": "查询高一年级成绩分布直方图",
+        "tool_call": {
+          "tool_name": "生成直方图",
+          "parameters": {
+            "直方图数据": "[85,92,78,88,95,60,100,82,90,76]",
+            "区间个数": 5,
+            "图表名称": "高一年级成绩分布直方图"
+          }
+        },
+        "expected_output": "直方图展示频数分布"
+      },
+      {
+        "category": "area_chart",
+        "description": "面积图调用示例（累积趋势）",
+        "user_query": "查询各学期成绩变化趋势（面积图）",
+        "tool_call": {
+          "tool_name": "生成面积图",
+          "parameters": {
+            "面积图数据": "[{\"time\":\"第一学期\",\"value\":82.50},{\"time\":\"第二学期\",\"value\":86.30}]",
+            "图表名称": "各学期成绩变化趋势",
+            "图表X轴名称": "学期",
+            "图表Y轴名称": "平均分"
+          }
+        },
+        "expected_output": "面积图展示累积趋势"
+      },
+      {
+        "category": "horizontal_bar_chart",
+        "description": "条形图调用示例（长标签对比）",
+        "user_query": "查询各班级平均分排名（条形图）",
+        "tool_call": {
+          "tool_name": "生成条形图",
+          "parameters": {
+            "条形图数据": "[{\"category\":\"高一(1)班\",\"value\":87.29},{\"category\":\"高一(2)班\",\"value\":85.50}]",
+            "图表名称": "各班级平均分排名",
+            "图表X轴名称": "班级",
+            "图表Y轴名称": "平均分"
+          }
+        },
+        "expected_output": "条形图展示长标签类别对比"
+      },
+      {
+        "category": "violin_chart",
+        "description": "小提琴图调用示例（分布形态）",
+        "user_query": "查询各班成绩分布形态",
+        "tool_call": {
+          "tool_name": "生成小提琴图",
+          "parameters": {
+            "小提琴图数据": "[{\"category\":\"高一(1)班\",\"value\":85.00},{\"category\":\"高一(1)班\",\"value\":92.00},{\"category\":\"高一(2)班\",\"value\":88.00}]",
+            "图表名称": "各班成绩分布小提琴图",
+            "图表X轴名称": "班级",
+            "图表Y轴名称": "分数"
+          }
+        },
+        "expected_output": "小提琴图展示分布密度和形态"
+      },
+      {
+        "category": "waterfall_chart",
+        "description": "瀑布图调用示例（累积变化）",
+        "user_query": "查询各科成绩累积变化（瀑布图）",
+        "tool_call": {
+          "tool_name": "生成瀑布图",
+          "parameters": {
+            "瀑布图数据": "[{\"category\":\"数学\",\"value\":-5},{\"category\":\"英语\",\"value\":8},{\"category\":\"物理\",\"value\":3},{\"category\":\"期中成绩\",\"isIntermediateTotal\":true},{\"category\":\"期末成绩\",\"isTotal\":true}]",
+            "图表名称": "各科成绩变化构成",
+            "X轴标题": "科目",
+            "Y轴标题": "变化分数"
+          }
+        },
+        "expected_output": "瀑布图展示累积增减变化"
+      },
+      {
+        "category": "wordcloud",
+        "description": "词云图调用示例（文本评价分析）",
+        "user_query": "查询教师评价高频关键词",
+        "tool_call": {
+          "tool_name": "生成词云图",
+          "parameters": {
+            "词云图数据": "[{\"text\":\"生动\",\"value\":5},{\"text\":\"耐心\",\"value\":4},{\"text\":\"讲解清晰\",\"value\":3}]",
+            "图表名称": "教师评价高频词"
+          }
+        },
+        "expected_output": "词云图展示高频关键词"
+      },
+      {
+        "category": "format_conversion",
+        "description": "数据格式转换示例",
+        "sub_examples": [
+          {
+            "from": "[{class_name: \"高一(1)班\", avg_score: 87.29}, {class_name: \"高一(2)班\", avg_score: 85.50}]",
+            "to": "[{\"category\":\"高一(1)班\",\"value\":87.29},{\"category\":\"高一(2)班\",\"value\":85.50}]",
+            "to_string": "\"[{\\\"category\\\":\\\"高一(1)班\\\",\\\"value\\\":87.29},{\\\"category\\\":\\\"高一(2)班\\\",\\\"value\\\":85.50}]\"",
+            "description": "柱状图/饼图转换：类别→category，数值→value"
+          },
+          {
+            "from": "[{subject: \"数学\", avg_score: 85.00}, {subject: \"英语\", avg_score: 92.00}]",
+            "to": "[{\"name\":\"数学\",\"value\":85.00},{\"name\":\"英语\",\"value\":92.00}]",
+            "description": "雷达图转换：维度→name，数值→value"
+          },
+          {
+            "from": "[{class_name: \"高二(1)班\", score: 85.00}, {class_name: \"高二(1)班\", score: 92.00}]",
+            "to": "[{\"category\":\"高二(1)班\",\"value\":85.00},{\"category\":\"高二(1)班\",\"value\":92.00}]",
+            "description": "箱线图/小提琴图转换：类别→category，需保留原始明细"
+          },
+          {
+            "from": "[{math_score: 85, physics_score: 88}, {math_score: 92, physics_score: 90}]",
+            "to": "[{\"x\":85,\"y\":88},{\"x\":92,\"y\":90}]",
+            "description": "散点图转换：两组数值→x和y"
+          },
+          {
+            "from": "[{score: 85}, {score: 92}, {score: 78}, {score: 88}]",
+            "to": "[85, 92, 78, 88]",
+            "description": "直方图转换：直接提取数值列表"
+          }
+        ]
+      },
+      {
+        "category": "image_extraction",
+        "description": "图片链接提取示例",
+        "tool_response": "https://mdn.alipayobjects.com/one_clip/afts/img/A*123/original{\"imageUrl\": \"https://mdn.alipayobjects.com/one_clip/afts/img/A*123/original\"}",
+        "extracted_url": "https://mdn.alipayobjects.com/one_clip/afts/img/A*123/original",
+        "rule": "找到以 https://mdn.alipayobjects.com 开头、以 /original 结尾的 URL"
+      },
+      {
+        "category": "sql_query",
+        "description": "SQL查询示例",
+        "sub_examples": [
+          {
+            "query": "SELECT c.class_name, ROUND(AVG(g.score), 2) AS avg_score FROM grades g JOIN students s ON g.student_id = s.student_id JOIN classes c ON s.class_id = c.id WHERE c.grade = '高一' GROUP BY c.class_name ORDER BY avg_score DESC;",
+            "description": "各班平均分排名查询（班级对比）"
+          },
+          {
+            "query": "SELECT g.semester, ROUND(AVG(g.score), 2) AS avg_score FROM grades g JOIN students s ON g.student_id = s.student_id JOIN classes c ON s.class_id = c.id WHERE c.grade = '高二' GROUP BY g.semester ORDER BY g.semester;",
+            "description": "各学期成绩变化趋势查询（时间趋势）"
+          },
+          {
+            "query": "SELECT CASE WHEN score >= 90 THEN '优秀' WHEN score >= 80 THEN '良好' WHEN score >= 70 THEN '中等' WHEN score >= 60 THEN '及格' ELSE '不及格' END AS level, COUNT(*) AS count FROM grades GROUP BY level;",
+            "description": "成绩分段占比查询（占比分布）"
+          }
+        ]
+      },
+      {
+        "category": "exception_handling",
+        "description": "异常处理示例",
+        "sub_examples": [
+          {
+            "scenario": "SQL语法错误",
+            "user_query": "查询各班级的平均分和标准差（错误SQL）",
+            "expected_behavior": "Agent分析错误原因，修正SQL并重新执行，最多重试2次",
+            "fallback": "若2次重试均失败，向用户说明错误原因，并建议简化查询或改用其他分析维度"
+          },
+          {
+            "scenario": "数据不存在",
+            "user_query": "张三的各科成绩怎么样？",
+            "expected_behavior": "向用户说明'未查询到相关数据'，主动跳过该需求，继续执行其他可独立完成的分析任务",
+            "fallback": "若存在替代数据，可主动向用户推荐（如'学生_1'）"
+          },
+          {
+            "scenario": "瀑布图误用",
+            "user_query": "请用瀑布图展示各科成绩排名",
+            "expected_behavior": "判断为类别对比场景，改用柱状图/条形图并说明原因",
+            "fallback": "向用户解释瀑布图适用于累积变化场景"
+          },
+          {
+            "scenario": "图表生成失败",
+            "user_query": "分析全校成绩（包含5张图表）",
+            "expected_behavior": "跳过失败的图表，继续生成剩余图表",
+            "fallback": "在最终回复中明确告知用户'某图表因生成失败已被跳过，其余图表正常展示'"
+          },
+          {
+            "scenario": "数据量过大",
+            "user_query": "用直方图展示包含10000个随机数的成绩分布",
+            "expected_behavior": "自动截断或压缩数据，或提示数据量过大建议使用统计摘要",
+            "fallback": "使用统计摘要（平均值、中位数、标准差等）替代完整明细"
+          }
+        ]
+      }
+    ]
+  }
